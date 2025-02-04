@@ -54,7 +54,7 @@ function setDeleteImages(){
 }
 
 //Mostrar ocultar contraseña
-let is_pass = true;
+
 document.getElementById("btn_4").addEventListener("click", showHidePasswords);
 function showHidePasswords(){
     chrome.scripting.executeScript({
@@ -65,6 +65,16 @@ function showHidePasswords(){
 function setShowHidePasswords(){
     var passwordform = document.querySelectorAll('input[type = "password"]');
     passwordform.forEach(function(a, index, p){
-        p[index].style.backgroundColor = "red";
+        if(p[index].is_pass == false || p[index].is_pass == null){
+            p[index].type = "text";
+            p[index].is_pass = true;
+        }
+    });
+    var passwordform = document.querySelectorAll('input[type = "text"]');
+    passwordform.forEach(function(a, index, p){
+        if(p[index].is_pass == true){
+            p[index].type = "password";
+            p[index].is_pass = false;
+        }
     })
 }
