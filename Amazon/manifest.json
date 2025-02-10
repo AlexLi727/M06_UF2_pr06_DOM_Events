@@ -1,0 +1,13 @@
+{
+    "manifest_version": 3,
+    "name":"Er amazonas",
+    "short_name":"Amazonas",
+    "description":"un exemple de extensio",
+    "version":"1.0",
+    "action":{
+        "default_popup":"index.html"
+    },
+    "permissions":[
+        "activeTab","scripting","tabs"
+    ]
+}
