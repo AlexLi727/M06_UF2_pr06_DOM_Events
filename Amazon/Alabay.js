@@ -40,7 +40,17 @@ function mostCheap(){
 function searchMostCheap(){
     var price = document.querySelectorAll('span[class = "_cDEzb_p13n-sc-price_3mJ9Z"]');
     var CheapestProduct;
+    var CheapestProductElement;
     price.forEach(function(a, index, p){
-        console.log(parseFloat(p[index].innerText).toFixed(2));
+        var price = p[index].innerText
+        price = price.substring(0, price.indexOf(",")) + "." + price.substring(price.indexOf(",")+1, price.length);
+        price = parseFloat(price);
+        console.log(price);
+        if(CheapestProduct > price || CheapestProduct == null){
+            CheapestProduct = price;
+            CheapestProductElement = p[index];
+        }
     })
+    CheapestProductElement.scrollIntoView({behavior: "smooth"});
+    
 }
