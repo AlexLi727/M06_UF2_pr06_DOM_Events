@@ -63,18 +63,27 @@ function showHidePasswords(){
     })
 }
 function setShowHidePasswords(){
-    var passwordform = document.querySelectorAll('input[type = "password"]');
-    passwordform.forEach(function(a, index, p){
-        if(p[index].is_pass == false || p[index].is_pass == null){
-            p[index].type = "text";
-            p[index].is_pass = true;
+    if(document.querySelectorAll('input[is_pass = true]').length == 0 && document.querySelectorAll('input[is_pass = false]').length == 0){
+        var passwordform = document.querySelectorAll('input[type = "password"]');
+        passwordform.forEach(function(a, index, p){
+                p[index].type = "text";
+                p[index].setAttribute("is_pass", true)
+        });
+    }else{
+        if(document.querySelectorAll('input[is_pass = true]').length != 0){
+            var passwordform = document.querySelectorAll('input[is_pass = true]');
+            passwordform.forEach(function(a, index, p){
+                p[index].type = "password";
+                p[index].setAttribute("is_pass", false)
+            })
+        }else{
+            var passwordform = document.querySelectorAll('input[is_pass = false]');
+            passwordform.forEach(function(a, index, p){
+                p[index].type = "text";
+                p[index].setAttribute("is_pass", true)
+            })
         }
-    });
-    var passwordform = document.querySelectorAll('input[type = "text"]');
-    passwordform.forEach(function(a, index, p){
-        if(p[index].is_pass == true){
-            p[index].type = "password";
-            p[index].is_pass = false;
-        }
-    })
+    }
+
+    
 }
