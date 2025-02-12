@@ -1,8 +1,8 @@
 {
     "manifest_version": 3,
-    "name":"Extensió Pal feisbus",
+    "name":"FaceBook Gaming",
     "short_name":"Exemple",
-    "description":"un exemple de extensio",
+    "description":"extensio per FaceBook",
     "version":"1.0",
     "action":{
         "default_popup":"index.html"

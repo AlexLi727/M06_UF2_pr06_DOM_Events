@@ -1,8 +1,8 @@
 {
     "manifest_version": 3,
-    "name":"Er amazonas",
+    "name":"Amazon Prime",
     "short_name":"Amazonas",
-    "description":"un exemple de extensio",
+    "description":"extensio per Amazon en productos electrónicos",
     "version":"1.0",
     "action":{
         "default_popup":"index.html"
