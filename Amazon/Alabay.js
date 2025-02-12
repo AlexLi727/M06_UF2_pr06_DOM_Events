@@ -51,6 +51,8 @@ function searchMostCheap(){
             CheapestProductElement = p[index];
         }
     })
-    CheapestProductElement.scrollIntoView({behavior: "smooth"});
-    
+    CheapestProductElement.scrollIntoView({behavior: "smooth", block: "center", inline: "center"});
+    var productImg = CheapestProductElement.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.previousSibling;
+    productImg.style.border = "2px solid black";
+    productImg.style.background = "blue";
 }
